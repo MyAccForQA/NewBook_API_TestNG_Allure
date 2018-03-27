@@ -18,10 +18,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- #### allure #### -->
-		<!-- Needed for allure-maven-plugin to specify report version -->
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<allure.version>2.6.0</allure.version>
-		<!-- #### allure-report #### -->
+		<!-- Needed for allure-maven-plugin to specify report version -->
 		<!-- aspectj - https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
 		<aspectj.version>1.8.10</aspectj.version>
 
