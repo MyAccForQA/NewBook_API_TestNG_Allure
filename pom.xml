@@ -1,0 +1,241 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.newbook</groupId>
+	<artifactId>NewBook_API_TestNG_Allure</artifactId>
+	<!-- <version>${build.version}</version> -->
+	<version>1.1</version>
+	<packaging>jar</packaging>
+
+	<name>NewBook_API_TestNG_Allure</name>
+	<url>http://maven.apache.org</url>
+
+
+	<!-- ############################### properties - START ############################################### -->
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- #### allure #### -->
+		<!-- Needed for allure-maven-plugin to specify report version -->
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<allure.version>2.6.0</allure.version>
+
+		<aspectj.version>1.8.10</aspectj.version>
+		<!-- #### allure #### -->
+
+		<!-- hamcrest-all - https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+		<hamcrest.version>1.3</hamcrest.version>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<rest-assured-new.version>3.0.7</rest-assured-new.version>
+
+		<!-- Read JSON - Start -->
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<org.json.version>20180130</org.json.version>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<commons-io.version>2.6</commons-io.version>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<gson.version>2.8.2</gson.version>
+		<!-- Read JSON - End -->
+	</properties>
+	<!-- ############################### properties - END ################################################# -->
+
+
+	<!-- ############################### dependencies - START ############################################### -->
+	<dependencies>
+		<!-- new version ALLURE -->
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
+
+		<!-- Maven - http://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+		<!-- for make static - import static org.hamcrest.CoreMatchers.is; -->
+		<!-- Maven - http://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- for log - https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.21</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Response - Start -->
+		<!-- for GET/POST request with RestAssured -->
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<!-- NEW Version -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured-new.version}</version>
+		</dependency>
+		<!-- Response - End -->
+
+		<!-- Read JSON - Start -->
+		<!-- read JSON with class - for - JSON_With____Class_org_json_Sort -->
+		<!-- Feb 03, 2018 - https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${org.json.version}</version>
+		</dependency>
+		<!-- for org.json - also add for FileUtils - read json from file -->
+		<!-- Oct 15, 2017 - https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<!-- Oct 09, 2012 - https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+
+		<!-- read JSON with Class - for - JSON_With__Class_com_gson_NoSort -->
+		<!-- Sep 20, 2017 - https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
+		<!-- Read JSON - End -->
+
+		<!-- Excel - Start -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<!-- 17 doesn't work -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<!-- OLD version -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<!-- Excel - End -->
+	</dependencies>
+	<!-- ############################### dependencies - END ############################################### -->
+
+
+	<!-- ############################### build - START ############################################### -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- ############################### build - END ############################################### -->
+
+
+	<!-- ############################### reporting - START ############################################### -->
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>2.8</version>
+			</plugin>
+		</plugins>
+	</reporting>
+	<!-- ############################### reporting - END ############################################### -->
+
+
+	<!-- ############################### profiles - START ############################################### -->
+	<!-- ################################# TestNG - ONLY ################################################ -->
+	<profiles>
+
+		<profile> <!-- Using Suite XML Files - http://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html -->
+			<!-- default - run all test -->
+			<!-- run - mvn clean test -Ptest1 -->
+			<id>test1</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>!testngxml!/testng_All.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<!-- if you know only name of file - run one test file from folder - ./!testngxml!/..... -->
+			<!-- run - mvn clean test -Ptest2 -Dtestngfile=testng_TestsTemp0_Title.xml -->
+			<id>test2</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>!testngxml!/${testngfile}</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<!-- if you know path to file - run one test file with full path -->
+			<!-- run - mvn clean test -Ptest3 -Dtestngfile=!testngxml!/testng_TestsTemp0_Title.xml -->
+			<id>test3</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>${testngfile}</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+	<!-- ################################# TestNG - ONLY ################################################ -->
+	<!-- ############################### profiles - START ############################################### -->
+
+</project>
