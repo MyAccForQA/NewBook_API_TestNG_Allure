@@ -21,9 +21,9 @@
 		<!-- Needed for allure-maven-plugin to specify report version -->
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<allure.version>2.6.0</allure.version>
-
+		<!-- #### allure-report #### -->
+		<!-- aspectj - https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
 		<aspectj.version>1.8.10</aspectj.version>
-		<!-- #### allure #### -->
 
 		<!-- hamcrest-all - https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
 		<hamcrest.version>1.3</hamcrest.version>
@@ -173,7 +173,6 @@
 	<!-- ############################### profiles - START ############################################### -->
 	<!-- ################################# TestNG - ONLY ################################################ -->
 	<profiles>
-
 		<profile> <!-- Using Suite XML Files - http://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html -->
 			<!-- default - run all test -->
 			<!-- run - mvn clean test -Ptest1 -->
@@ -233,7 +232,6 @@
 				</plugins>
 			</build>
 		</profile>
-
 	</profiles>
 	<!-- ################################# TestNG - ONLY ################################################ -->
 	<!-- ############################### profiles - START ############################################### -->
