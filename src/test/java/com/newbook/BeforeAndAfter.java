@@ -1,4 +1,4 @@
-package newbook;
+package com.newbook;
 
 import static org.testng.Assert.assertEquals;
 

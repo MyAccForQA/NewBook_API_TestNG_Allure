@@ -1,4 +1,4 @@
-package newbook;
+package com.newbook;
 
 import io.qameta.allure.Attachment;
 // import io.qameta.allure.Issue;

@@ -2,7 +2,7 @@ package com.newbook.model;
 
 import org.testng.annotations.DataProvider;
 
-public class BeforeAndAfter extends newbook.BeforeAndAfter {
+public class BeforeAndAfter extends com.newbook.BeforeAndAfter {
 
 	@DataProvider
 	public Object[][] dataProviderForModeltGetSelfData() {

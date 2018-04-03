@@ -1,4 +1,4 @@
-package newbook;
+package com.newbook;
 
 public class SimpleTest extends BeforeAndAfter {
 
