@@ -2,10 +2,10 @@
 My Company Inc. [API Tests] 
 ########################################
 
-This repository contains `Selenium <http://seleniumhq.org/>`_ tests for the `My Company Inc. <http://www.MyCompany.com/>`_, `GitHub Account <https://github.com/ACCOUNT/REPOSITORY>`_.
+This repository contains API tests for the `My Company Inc. <http://www.MyCompany.com/>`_, `GitHub Account <https://github.com/MyAccForQA/NewBook_API_TestNG_Allure>`_.
 
 
-    .. image:: https://github.com/ACCOUNT/REPOSITORY/blob/master/screenshot/README/homepage.png
+    .. image:: https://github.com/MyAccForQA/NewBook_API_TestNG_Allure/blob/master/screenshot/README/nb.png
         :alt: My Company Inc.
         :width: 30%
         :align: center
@@ -33,9 +33,9 @@ Make sure you have `Git <https://git-scm.com/>`_ installed on your system. For c
 ----------------
 GitHub
 ----------------
-Make sure you have access `GitHub Account <https://github.com/ACCOUNT/REPOSITORY>`_:
+Make sure you have access `GitHub Account <https://github.com/MyAccForQA/NewBook_API_TestNG_Allure>`_:
 
-``git clone https://github.com/ACCOUNT/REPOSITORY``
+``git clone https://github.com/MyAccForQA/NewBook_API_TestNG_Allure``
 
 ----------------
 Maven
@@ -50,26 +50,6 @@ Java
 Make sure you have `Java <http://www.java.com/>`_ installed on your system, if not follow the vendor instructions for installing them on your operating system.
 
 ``java -version``
-
-----------------
-GeckoDriver
-----------------
-~~~~~~~~~~~~
-FireFox - WebDriver for FireFox
-~~~~~~~~~~~~
-Need download driver from `GeckoDriver <https://github.com/mozilla/geckodriver/releases>`_ and drop in folder:
-For Mac - ./src/main/resources/geckodriver/mac/ff/geckodriver
-For Win - ./src/main/resources/geckodriver/mac/ff/geckodriver.exe
-
-Instruction - https://github.com/SeleniumHQ/selenium/issues/2990
-
-~~~~~~~~~~~~
-ChromeDriver - WebDriver for Chrome [Not Implement yet]
-~~~~~~~~~~~~
-Need download chromedriver from `GeckoDriver <https://sites.google.com/a/chromium.org/chromedriver/downloads>`_ and drop in folder:
-For Mac - ./src/main/resources/geckodriver/mac/ch/chromedriver
-For Win - ./src/main/resources/geckodriver/win/ch/chromedriver.exe
-
 
 =============
 Run
@@ -103,39 +83,6 @@ Run test with of report
 To run tests with getting a report use option site
 
 ``mvn clean site``
-
-----------------
-Browser
-----------------
-To run the framework in a particular browser, to need to specify the name of the browser as a parameter of the option of [-DdriverType]
-
-~~~~~~~~~~~~
-Firefox
-~~~~~~~~~~~~
-To run in Firefox use -DdriverType=FF, below:
-
-``mvn clean site -DdriverType=[FF/ff/FIREFOX/FireFox/firefox/FOX/Fox/fox]``
-
-~~~~~~~~~~~~
-Chrome - [Not Implement yet]
-~~~~~~~~~~~~
-To run in Chrome use -DdriverType=CHROME, below:
-
-``mvn clean site -DdriverType=[CH/ch/CHROME/chrome/GOOGLE/google]``
-
-~~~~~~~~~~~~
-Internet Explorer - [Not Implement yet]
-~~~~~~~~~~~~
-To run in Internet Explorer use -DdriverType=IE, below:
-
-``mvn clean site -DdriverType=[IE/ie]``
-
-~~~~~~~~~~~~
-Default
-~~~~~~~~~~~~
-If you don't specify this parameter, default option -DdriverType = ff
-
-``mvn clean site -DdriverType=ff``
 
 ----------------
 Profile
