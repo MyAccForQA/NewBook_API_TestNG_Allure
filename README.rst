@@ -1,5 +1,5 @@
 ########################################
-My Company Inc. [Selenium Tests] 
+My Company Inc. [API Tests] 
 ########################################
 
 This repository contains `Selenium <http://seleniumhq.org/>`_ tests for the `My Company Inc. <http://www.MyCompany.com/>`_, `GitHub Account <https://github.com/ACCOUNT/REPOSITORY>`_.
